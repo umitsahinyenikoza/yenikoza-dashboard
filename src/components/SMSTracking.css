@@ -1,0 +1,380 @@
+/* SMS Tracking Component Styles */
+.sms-tracking {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* SMS Metric Cards */
+.sms-tracking .sms-metric-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.sms-tracking .sms-metric-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.sms-tracking .sms-metric-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--sms-color), var(--sms-color-light));
+}
+
+.sms-tracking .sms-metric-card.blue {
+  --sms-color: #2563eb;
+  --sms-color-light: #60a5fa;
+}
+
+.sms-tracking .sms-metric-card.green {
+  --sms-color: #10b981;
+  --sms-color-light: #34d399;
+}
+
+.sms-tracking .sms-metric-card.red {
+  --sms-color: #ef4444;
+  --sms-color-light: #f87171;
+}
+
+.sms-tracking .sms-metric-card.purple {
+  --sms-color: #8b5cf6;
+  --sms-color-light: #a78bfa;
+}
+
+/* Metric Icon Container */
+.sms-tracking .metric-icon-container {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.sms-tracking .metric-icon-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--sms-color), var(--sms-color-light));
+  opacity: 0.1;
+}
+
+.sms-tracking .metric-icon {
+  position: relative;
+  z-index: 1;
+}
+
+/* Trend Indicator */
+.sms-tracking .trend-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.sms-tracking .trend-indicator.positive {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.sms-tracking .trend-indicator.negative {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+/* Approval Type Cards */
+.sms-tracking .approval-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.sms-tracking .approval-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.sms-tracking .approval-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.sms-tracking .approval-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.sms-tracking .approval-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+.sms-tracking .approval-status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.sms-tracking .approval-status.active {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.sms-tracking .approval-status.inactive {
+  background: rgba(107, 114, 128, 0.1);
+  color: #6b7280;
+  border: 1px solid rgba(107, 114, 128, 0.2);
+}
+
+.sms-tracking .approval-metrics {
+  display: grid;
+  gap: 1rem;
+}
+
+.sms-tracking .approval-metric {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  border: 1px solid rgba(229, 231, 235, 0.5);
+}
+
+.sms-tracking .approval-metric-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.sms-tracking .approval-metric-value {
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.sms-tracking .approval-metric-value.success {
+  color: #10b981;
+}
+
+/* Progress Bar */
+.sms-tracking .approval-progress {
+  margin-top: 1rem;
+  background: #e5e7eb;
+  border-radius: 6px;
+  height: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.sms-tracking .approval-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  border-radius: 6px;
+  transition: width 0.8s ease-in-out;
+  position: relative;
+}
+
+/* Charts Section */
+.sms-tracking .chart-container {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  position: relative;
+  overflow: hidden;
+}
+
+.sms-tracking .chart-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #2563eb, #10b981);
+}
+
+.sms-tracking .chart-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.sms-tracking .chart-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 20px;
+  background: linear-gradient(135deg, #2563eb, #10b981);
+  border-radius: 2px;
+}
+
+/* Status Summary */
+.sms-tracking .status-summary {
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+}
+
+.sms-tracking .status-item {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.sms-tracking .status-item:hover {
+  transform: translateY(-2px);
+}
+
+.sms-tracking .status-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--status-bg);
+  opacity: 0.05;
+}
+
+.sms-tracking .status-item.active {
+  --status-bg: #10b981;
+}
+
+.sms-tracking .status-item.blue {
+  --status-bg: #2563eb;
+}
+
+.sms-tracking .status-item.purple {
+  --status-bg: #8b5cf6;
+}
+
+.sms-tracking .status-icon {
+  margin: 0 auto 0.75rem auto;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.sms-tracking .status-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+.sms-tracking .status-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+}
+
+/* Grid Classes */
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .grid-cols-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  
+  .grid-cols-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-cols-4 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  
+  .grid-cols-3 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1024px) {
+  .sms-tracking .chart-container {
+    padding: 1rem;
+  }
+  
+  .sms-tracking .approval-card {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sms-tracking .approval-header {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  
+  .sms-tracking .metric-icon-container {
+    width: 48px;
+    height: 48px;
+  }
+} 
