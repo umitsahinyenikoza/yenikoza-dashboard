@@ -166,22 +166,55 @@
 /* Store Grid */
 .stores-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
   width: 100%;
 }
 
+@media (max-width: 1024px) {
+  .stores-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .stores-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .store-card {
+  min-width: 0;
+  max-width: 850px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
   background: #f9fafb;
   border-radius: 8px;
-  padding: 1rem;
   border: 1px solid #e5e7eb;
   transition: all 0.2s ease;
 }
 
+/* Farklı mağaza kartları için arkaplan renkleri */
+.store-card:nth-child(4n+1) {
+  background: #e2e8f0; /* Daha belirgin mavi */
+}
+
+.store-card:nth-child(4n+2) {
+  background: #e5e7eb; /* Daha belirgin yeşil */
+}
+
+.store-card:nth-child(4n+3) {
+  background: #f3e8ff; /* Daha belirgin sarı */
+}
+
+.store-card:nth-child(4n+4) {
+  background: #fce7f3; /* Daha belirgin pembe */
+}
+
+/* Hover efektleri */
 .store-card:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .store-card.active {
@@ -401,7 +434,7 @@
 
 .tablet-status-text {
   padding-left: 0px;
-  margin-left: 35%;
+  margin-left: 15%;
 }
 
 .tablet-activity {
