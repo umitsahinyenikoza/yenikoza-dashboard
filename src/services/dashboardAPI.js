@@ -1,7 +1,7 @@
 import axios from 'axios';
-import { debugLog } from '../utils/debug.js';
+import { debugLog, debugError } from '../utils/debug.js';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3002/api';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
 
 class DashboardAPI {
   constructor() {
